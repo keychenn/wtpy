@@ -11,6 +11,8 @@ import gzip
 import xml.dom.minidom
 from pyquery import PyQuery as pq
 import re
+import ssl  # 20230420 by George解决SHFE，INE因SSL证书问题导致无法正常读取数据的情况
+ssl._create_default_https_context = ssl._create_unverified_context
 
 class DayData:
     '''
